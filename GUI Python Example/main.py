@@ -1,6 +1,20 @@
 import tkinter
 from tkinter import ttk
 from tkinter import messagebox
+import mysql.connector
+import time
+from datetime import datetime
+
+
+db = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    passwd = "root",
+    database = "test_1"
+)
+
+now = datetime.now()
+mycursor = db.cursor()
 
 def enter_data():
     accepted = accept_var.get()
