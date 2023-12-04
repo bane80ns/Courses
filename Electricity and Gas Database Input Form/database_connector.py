@@ -34,9 +34,9 @@ print("-----------------")
 
 
 # Display table row and column alocations, definitions
-mycursor.execute("DESCRIBE work1")
-for x in mycursor:
-    print(x)
+#mycursor.execute("DESCRIBE work1")
+#for x in mycursor:
+#    print(x)
 
 
 
@@ -48,13 +48,13 @@ for x in mycursor:
 #print("done")
 
 
-mycursor.execute("SELECT * FROM work1")
-result = mycursor.fetchall()
-for row in result:
-    print(row)
+#mycursor.execute("SELECT * FROM work1")
+#result = mycursor.fetchall()
+#for row in result:
+    #print(row)
 
-print("-------------------------------------------------------------")
-time.sleep(1)
+#print("-------------------------------------------------------------")
+#time.sleep(1)
 
 
 
@@ -107,3 +107,15 @@ table_name = "work1"
 #db.commit()
 
 
+table_name = "work1"
+condition_year = "entrydate_year"
+condition_month = "entrydate_month"
+date_year_var = 2023
+date_month_var = "03"
+
+current_month_query = f"SELECT gas FROM {table_name} WHERE {condition_year} = %s AND {condition_month} = %s"
+mycursor.execute(current_month_query, (date_year_var, date_month_var))
+
+single_cell_data = mycursor.fetchone()
+print(date_year_var, date_month_var)
+print(single_cell_data)

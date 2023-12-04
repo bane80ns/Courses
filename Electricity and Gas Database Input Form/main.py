@@ -16,7 +16,7 @@ from datetime import datetime
                                                         # "gas" - for Gas counter, integer
                                                         # "ht" - for High Tarrif EL. counter, integer
                                                         # "lt" - for Low Tarrif EL. counter, integer
-                                                        # "entrydate" - for entrydate string in format month_year)
+                                                        # "entrydate" - for entrydate string in format year_month)
                                                         # "entrydate_month" - integer
                                                         # "entrydate_year" - integer
 db = mysql.connector.connect(
